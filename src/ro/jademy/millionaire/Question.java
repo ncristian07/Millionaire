@@ -5,15 +5,34 @@ import java.util.List;
 
 public class Question {
 
-    public static final int MAX_LEVEL = 15;
+    private static final int MAX_LEVEL = 15;
+    private String question;
+    private int difficultyLevel; //max 15
+    private List<Answer> answerList = new ArrayList<>();
 
-    public String question;
-    public int difficultyLevel; //max 15
-    public List<Answer> answerList = new ArrayList<>();
+    public Question(String question, int difficultyLevel, List<Answer> answerList){
+        this.question=question;
+        this.difficultyLevel=difficultyLevel;
+        this.answerList.addAll(answerList);
+    }
+
+    public int getMaxLevel(){
+        return MAX_LEVEL;
+    }
+    public String setQuestion(){
+        return question;
+    }
+    public int getDifficultyLevel(){
+        return difficultyLevel;
+    }
+
+    public List<Answer> getAnswerList(){
+        return answerList;
+    }
 
     public Answer getCorrectAnswer () {
         for(Answer answer : answerList){
-            if(answer.isCorrect){
+            if(answer.isCorrect()){
                 return answer;
             }
         }
