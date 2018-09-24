@@ -12,5 +12,6 @@ public abstract class Answer {
     }
 
     abstract boolean isCorrect();
+
 }
 
