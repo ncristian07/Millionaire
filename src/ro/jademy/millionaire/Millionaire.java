@@ -12,11 +12,18 @@ public class Millionaire {
 
     public static void main(String[] args) {
 
+        initQuestions();
+
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Do you want to play Millionaire? ");
         String answerPlayer = scan.nextLine();
 
+        do {
+            ArrayList<Question> gameQuestions = getGameQuestions();
+            Game game = new Game(gameQuestions,  scan);
+            game.start();
+        } while (answerPlayer.equalsIgnoreCase("Yes")/*&&game.currentLevel!=*/);
 
     }
 

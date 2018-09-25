@@ -2,6 +2,7 @@ package ro.jademy.millionaire;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Game {
 
@@ -9,7 +10,12 @@ public class Game {
 
     ArrayList<Question> allQuestionsList = new ArrayList<>();
 
-        //initializam intrebarile si jocul (dificultatea/intrebarile/raspunsurile/utilizatorul
+    private Scanner scanner;
+
+    public Game(ArrayList<Question> gameQuestions, Scanner scanner) {
+        this.allQuestionsList.addAll(gameQuestions);
+        this.scanner = scanner;
+    }
 
 
     public void askQuestion() {
@@ -21,6 +27,9 @@ public class Game {
         }
 
 
+    }
+    public void start () {
+        askQuestion();
     }
 
     public void answerQuestion() {
